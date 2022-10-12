@@ -1,0 +1,77 @@
+@import '../../../styles.scss';
+
+.sidenav-container {
+  height: 100%;  
+  background-color: $white;
+}
+
+.sidenav {
+  width: 25rem; 
+}
+
+.mat-toolbar {  
+  display: grid;
+  grid-column: 1fr;
+  width: 90%;
+  height: 40%;
+  border-radius: 2.1rem;
+  margin: 1.2rem;
+  background-color: $medium-red; 
+  color: $white;    
+  text-align: center; 
+}
+
+.mat-toolbar .logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mat-toolbar .logo img{
+  width: 5.5rem;
+  height: 5.5rem;
+}
+
+.mat-toolbar .logo p{  
+  font-size: 2rem;  
+  text-align: center;
+  margin: 0;
+}
+
+.mat-toolbar .user-info img{
+  width: 10rem;
+}
+
+.mat-toolbar .user-info .user-name{
+  font-size: 3.6rem;
+  font-weight: bold;  
+
+}
+
+.mat-nav-list{
+  text-align: center;
+}
+
+.mat-nav-list .mat-list-item{
+  width: 90%;  
+  background-color: $red;  
+  margin: 1.2rem;
+  border-radius: .8rem;  
+  color: $white;
+  font-size: 1.6rem;
+  transition: 0.3s;    
+}
+
+.mat-nav-list .mat-list-item:hover{
+  background-color: $medium-red;
+}
+
+.mat-list-base .mat-list-item .mat-list-item-content{
+  justify-content: center;
+}
+
+.mat-nav-list mat-list-text{
+  gap: 0;
+  text-align: center;
+}
+

@@ -1,0 +1,63 @@
+@import '../../../styles.scss';
+
+.cards-mesas{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;  
+  gap: 2.5rem;  
+  margin: 0 2rem;
+}
+
+.card-mesa{
+  width: 24.4rem;
+  color: $white;  
+  border-radius: 2.1rem;
+  padding: 4.2rem 3.3rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.card-mesa:hover{
+  transform: translateY(-10px);
+}
+
+.card-mesa .title {
+  font-size: 3.2rem;
+}
+
+.card-mesa .title span{
+  font-size: 3.2rem;
+  font-weight: bold;
+}
+
+.card-mesa p{
+  display: flex;
+  gap: .8rem;
+  align-items: center;
+}
+
+.card-mesa span{
+  font-size: 2.4rem;
+}
+
+
+
+@media (max-width: 1300px) {
+  .cards-mesas{   
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+    
+}
+
+@media (max-width: 1060px) {
+  .cards-mesas{   
+    grid-template-columns: 1fr 1fr;
+  }
+    
+}
+
+@media (max-width: 760px) {
+  .cards-mesas{   
+    grid-template-columns: 1fr;
+  }    
+}
+

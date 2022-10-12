@@ -1,0 +1,12 @@
+<div class="cards-mesas">
+  <div [ngStyle]="currentStyle"
+       *ngFor="let mesa of mesas"        
+       class="card-mesa">    
+    <p class="title">Mesa: <span>{{mesa.numeroMesa}}</span></p>
+    <div class="attr">
+      <p><mat-icon>accessible_forward</mat-icon> <span>0/{{mesa.assentos}}</span></p>
+      <p><mat-icon>file_copy</mat-icon> <span>Pedidos: {{mesa.assentos}}</span></p>
+      <p><mat-icon>access_time</mat-icon> <span>{{setTime(this.horaAbertura)}}</span></p>
+    </div> 
+  </div>
+</div>

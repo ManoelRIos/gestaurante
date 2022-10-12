@@ -1,0 +1,32 @@
+
+Gerente: 
+
+-> Manter Funcionários 
+-> Manter  Itens do Cardápio
+-> Manter Cardápio
+-> Manter Mesas
+-> Consultar vendas por período
+
+----------------------------------------------------
+
+Garçom/Gerente:
+
+-> Manter Conta
+-> Manter Pedido -> Item pedido?
+-> Manter Itens Do Pedido
+-> Abrir Mesa -> !Mesa Aberta? && Mesa Cadastrada?
+-> Emitir Conta -> Mesa aberta? 
+-> Alterar quantidade de pessoas na mesa -> Mesa aberta?
+-> Alterar atendente da mesa -> Mesa aberta? 
+-> Consultar Cardápio
+
+----------------------------------------------------
+Gerente, Garçom e Cozinha
+
+-> Realizar Login -> Cadastrado?
+-> Realizar Logout -> Logado?
+-> Alterar status do pedido
+
+----------------------------------------------------
+
+

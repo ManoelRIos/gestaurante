@@ -1,0 +1,70 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    fixedInViewport
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="(isHandset$ | async) === false"
+  >
+
+    <mat-toolbar>
+      <div class="logo">
+        <img src="../../assets/logo.png" alt="">
+        <p>Gestaurante</p>
+      </div>      
+      <div class="user-info">
+        <img src="../../assets/logo.png" alt="">
+        <p class="user-name">Manual</p>
+        <p class="user-function">Gerente</p>
+      </div>
+    </mat-toolbar>
+
+    <mat-nav-list>
+      <a mat-list-item routerLink="pedidos">Pedidos</a>
+      <a mat-list-item routerLink="mesas">Mesas</a>
+      <a mat-list-item routerLink="cardapio">Cardápio</a>
+      <a mat-list-item routerLink="estoque">Estoque</a>
+      <a mat-list-item routerLink="financeiro">Financeiro</a>
+      <a mat-list-item routerLink="funcionario">Funcionários</a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <nav color="primary" class="navbar navbar-expand-lg navbar-light ">
+    <div class="container-fluid">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+      >
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>      
+      <ul class="navbar-nav" dropdown>
+        <li class="nav-item dropdown">
+          <a
+            id="button-basic"
+            dropdownToggle
+            class="nav-link dropdown-toggle"
+            id="navbarDropdownMenuLink"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            User
+          </a>
+          <ul
+            id="dropdown-basic"
+            *dropdownMenu
+            class="dropdown-menu dropdown-menu-end " 
+            aria-labelledby="navbarDropdownMenuLink"
+          >
+            <li><a class="dropdown-item" href="#">Perfil</a></li>
+            <li><a class="dropdown-item" href="#">Sair</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <router-outlet></router-outlet>
+</mat-sidenav-container>

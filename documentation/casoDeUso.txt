@@ -1,0 +1,16 @@
+//FUNCTIONS
+
+function CancelarPedido ($pedido){  
+  if($pedido.status == 'pendente'){
+    $pedido.remove();
+  }
+}
+
+function CancelarItemPedido ($pedido){  
+  if($pedido.status == 'pendente'){
+    $pedido.remove();
+  }
+}
+
+
+

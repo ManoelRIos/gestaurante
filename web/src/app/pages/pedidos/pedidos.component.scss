@@ -1,0 +1,33 @@
+.container {
+  margin: 0 2rem;
+}
+
+.info-orders {
+  display: flex;
+  justify-content: flex-start;
+  gap: 1.2rem;
+  margin-bottom: 3.2rem;
+}
+
+.orders-prod{
+  padding: 1.4rem 3.6rem;
+  background-color: white;  
+  border-radius: 2.1rem;
+  text-align: center;
+}
+
+.orders-canceled{
+  padding: 1.4rem 3.6rem;
+  background-color: white;  
+  border-radius: 2.1rem;
+  text-align: center;
+}
+
+.orders{
+  display: flex;
+  justify-content: space-between;
+
+  text-align: start;
+
+}
+
