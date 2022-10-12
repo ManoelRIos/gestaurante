@@ -6,41 +6,18 @@
 </div>
 
 <div class="container">
-  <!-- DETAILS -->
-  <div class="d-flex justify-content-cente">
-    <div *ngIf="pratoSelected">
-      <div class="card text-center">
-        <div class="card-header">
-          {{ pratoSelected }}
-        </div>
-        <div class="card-body">
-          <img class="card-img-top" src="" alt="imagem" />
-          <h5 class="card-title">{{ pratoSelected }}</h5>
-          <p class="card-text">{{ pratos[0].desc }}</p>
-          <button class="btn btn-warning" (click)="voltar()">Voltar</button>
-        </div>
-      </div>
-    </div>
+
+  <div class="category">
+    <button *ngFor="let prato of pratos"  class="card-cat">
+      {{prato.category}}  
+    </button>
   </div>
 
-  <!-- INDEX ALL -->
-  <div  class="item-cards" *ngIf="!pratoSelected">
-    <div class="item-card-box" *ngFor="let prato of pratos">
-      <div class="img-container">
-        <div class="img-inner">
-          <div class="inner-skew">
-            <img
-              src="https://supermercadosrondon.com.br/guiadecarnes/images/postagens/quer_fazer_hamburger_artesanal_perfeito_2019-05-14.jpg"
-            />
-          </div>
-        </div>
-      </div>
-      <div class="text-container">
-        <h3>{{ prato.nome }}</h3>
-        <div>
-          {{ prato.desc }}
-        </div>
-      </div>
-    </div>
+  <div class="content-item-cardapio">
+    <app-card-item-cardapio 
+      *ngFor="let prato of pratos" 
+    >
+    </app-card-item-cardapio>
   </div>
+  
 </div>

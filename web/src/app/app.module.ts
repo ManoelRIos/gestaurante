@@ -19,6 +19,7 @@ import { CardPedidosComponent } from './components/card-pedidos/card-pedidos.com
 import {CardNumericInfoComponent} from './components/card-numeric-info/card-numeric-info.component';
 import {CardMesaComponent} from './components/card-mesa/card-mesa.component';
 import { MesasComponent } from './pages/mesas/mesas.component';
+import { CardItemCardapioComponent } from './components/card-item-cardapio/card-item-cardapio.component';
 
 @NgModule({
   declarations: [					
@@ -31,7 +32,8 @@ import { MesasComponent } from './pages/mesas/mesas.component';
     EstoqueComponent,            
     CardPedidosComponent,
     CardNumericInfoComponent,
-    CardMesaComponent
+    CardMesaComponent,
+    CardItemCardapioComponent
    ],
   imports: [
     BrowserModule,

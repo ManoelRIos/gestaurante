@@ -12,14 +12,13 @@ export class CardapioComponent implements OnInit {
   pratoSelected!: string;
 
   public pratos = [
-    { id:1, nome:'Batata', desc: 'Batata com cheddar e bacon', valor: 35},
-    { id:2, nome:'Batata', desc: 'Batata com cheddar e bacon', valor: 35},
-    { id:3, nome:'Batata', desc: 'Batata com cheddar e bacon', valor: 35},
-    { id:4, nome:'Batata', desc: 'Batata com cheddar e bacon', valor: 35},
-    { id:5, nome:'Batata', desc: 'Batata com cheddar e bacon', valor: 35},
-    { id:6, nome:'Batata', desc: 'Batata com cheddar e bacon', valor: 35},
-    { id:7, nome:'Batata', desc: 'Batata com cheddar e bacon', valor: 35},
-    { id:8, nome:'Batata', desc: 'Batata com cheddar e bacon', valor: 35}
+    { id:1, nome:'Batata', desc: 'Batata com cheddar e bacon', valor: 35, category: "Pizza"},
+    { id:2, nome:'Batata', desc: 'Batata com cheddar e bacon', valor: 35, category: "Bebidas"},
+    { id:3, nome:'Batata', desc: 'Batata com cheddar e bacon', valor: 35, category: "Sobremesas"},
+    { id:4, nome:'Batata', desc: 'Batata com cheddar e bacon', valor: 35, category: "Porções"},
+    { id:5, nome:'Batata', desc: 'Batata com cheddar e bacon', valor: 35, category: "Cervejas"},
+    { id:6, nome:'Batata', desc: 'Batata com cheddar e bacon', valor: 35, category: "Destilados"},
+
   ]
 
   pratoSelect(prato: any){
