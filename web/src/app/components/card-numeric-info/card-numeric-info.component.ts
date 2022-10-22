@@ -11,6 +11,7 @@ export class CardNumericInfoComponent implements OnInit {
   @Input () text?: string;
   @Input () value?: string;
   @Input () color: string = "black";
+  @Input () isPrice?: boolean = false;
 
   currentStyle: Record<string, string> = {};
 

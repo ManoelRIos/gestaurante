@@ -1,2 +1,21 @@
 
+<app-title title="Financeiro"></app-title>
 
+
+
+<div class="chart">
+  <div class="total-value">
+    <app-card-numeric-info text="Receitas" value="100" color="#00CE08" [isPrice]="isPrice"></app-card-numeric-info>
+  </div>
+  <apx-chart
+    [series]="series"
+    [chart]="chart"
+    [title]="title"
+    [xaxis]="xaxis"
+    [stroke]="stroke"
+    [fill]="fill"
+    [markers]="markers"
+    [colors]="colors"
+  >
+  </apx-chart>
+</div>

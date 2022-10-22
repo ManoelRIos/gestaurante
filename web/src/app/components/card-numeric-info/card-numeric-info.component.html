@@ -1,4 +1,4 @@
 <div [ngStyle]="currentStyle" class="card-numeric-info">
   <p>{{ text }}</p>
-  <span>{{ value }}</span>
+  <span> <span *ngIf="isPrice">R$</span>{{ value }}</span>
 </div>

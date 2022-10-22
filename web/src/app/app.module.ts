@@ -3,6 +3,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { NgApexchartsModule } from 'ng-apexcharts';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PedidosComponent } from './pages/pedidos/pedidos.component';
@@ -20,6 +22,9 @@ import {CardNumericInfoComponent} from './components/card-numeric-info/card-nume
 import {CardMesaComponent} from './components/card-mesa/card-mesa.component';
 import { MesasComponent } from './pages/mesas/mesas.component';
 import { CardItemCardapioComponent } from './components/card-item-cardapio/card-item-cardapio.component';
+import { FinanceiroComponent } from './pages/financeiro/financeiro.component';
+import { FuncionariosComponent } from './pages/funcionarios/funcionarios.component';
+import { TableComponent } from './components/table/table.component';
 
 @NgModule({
   declarations: [					
@@ -33,9 +38,13 @@ import { CardItemCardapioComponent } from './components/card-item-cardapio/card-
     CardPedidosComponent,
     CardNumericInfoComponent,
     CardMesaComponent,
-    CardItemCardapioComponent
+    CardItemCardapioComponent, 
+    FinanceiroComponent,
+    FuncionariosComponent,
+    TableComponent
    ],
   imports: [
+    NgApexchartsModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,

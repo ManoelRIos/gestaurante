@@ -5,6 +5,7 @@ import { CardapioComponent } from './pages/cardapio/cardapio.component';
 import { EstoqueComponent } from './pages/estoque/estoque.component';
 import { PedidosComponent } from './pages/pedidos/pedidos.component';
 import { FinanceiroComponent } from './pages/financeiro/financeiro.component';
+import { FuncionariosComponent } from './pages/funcionarios/funcionarios.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'pedidos', pathMatch: 'full'},
@@ -12,7 +13,8 @@ const routes: Routes = [
   { path: 'mesas', component: MesasComponent},  
   { path: 'cardapio', component: CardapioComponent},
   { path: 'estoque', component: EstoqueComponent},  
-  { path: 'financeiro', component: FinanceiroComponent},  
+  { path: 'financeiro', component: FinanceiroComponent},
+  { path: 'funcionarios', component: FuncionariosComponent},
 ];
 
 @NgModule({
