@@ -25,6 +25,7 @@ import { CardItemCardapioComponent } from './components/card-item-cardapio/card-
 import { FinanceiroComponent } from './pages/financeiro/financeiro.component';
 import { FuncionariosComponent } from './pages/funcionarios/funcionarios.component';
 import { TableComponent } from './components/table/table.component';
+import { ItensCardapioComponent } from './pages/itensCardapio/itensCardapio.component';
 
 @NgModule({
   declarations: [					
@@ -41,7 +42,8 @@ import { TableComponent } from './components/table/table.component';
     CardItemCardapioComponent, 
     FinanceiroComponent,
     FuncionariosComponent,
-    TableComponent
+    TableComponent,
+    ItensCardapioComponent
    ],
   imports: [
     NgApexchartsModule,

@@ -1,6 +1,10 @@
 //Atributos de relacionamento apenas no diagrama de classe
 //Detem, Possui, apropria
 
+class Venda {
+
+}
+
 class Mesa {
 
   id!: number;
@@ -20,18 +24,18 @@ class Conta {
 }
 
 class Pedido {
-  int $id;
-  int $tempoDecorrido;
-  Array $itensPedido;
-  string $observacao;
-  string $status;
+  id :number
+  tempoDecorrido : string
+  itensPedido : ItemPedido
+  observacao : string
+  status : number
   // 1 Pedido POSSI2 N ItensPedido
 }
 
 class ItemPedido{
-  int $id;
-  int $quantidade;
-  Array $itemCardapio;
+  id: number
+  quantidade: number
+  itemCardapio: number
   // 1 ItemPedido POSSUI3 1 ItemCardapio
 }
 

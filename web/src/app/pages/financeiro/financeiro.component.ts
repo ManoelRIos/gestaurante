@@ -19,7 +19,22 @@ export class FinanceiroComponent implements OnInit {
   markers!: ApexMarkers;
   colors!: string[];
 
+  vendas = [
+    {x: 'jan', y: 10}
+  ] 
+
+  totalVendas () {
+    var anoAtual = new Date().getFullYear()
+    var mesAtual = new Date().getMonth()
+    var diaAtual =  new Date().getDate()
+    var dataAtual = new Date(anoAtual, mesAtual, diaAtual)
+    var mes = dataAtual.toLocaleDateString('default', {month: "long"})    
+  }
+
+
+
   ngOnInit(){
+    this.totalVendas()
     this.initializeChartOptions();
   }
   constructor() {  }
@@ -38,12 +53,12 @@ export class FinanceiroComponent implements OnInit {
       }
 
       this.series = [{
-        name: 'Values',
-        data: [10, 41, 35, 51, 49, 62, 69, 91, 148]
+        name: 'Receita',
+        data: this.vendas
       }]
 
       this.chart = {
-        type: 'line',
+        type: 'bar',
         width: '90%',
         height: '311px',
         background: "#fff",
@@ -62,7 +77,7 @@ export class FinanceiroComponent implements OnInit {
       }
 
       this.xaxis = {
-        categories: ["Jan", "Feb",  "Mar",  "Apr",  "May",  "Jun",  "Jul",  "Aug", "Sep"]
+        categories: ["Jan", "Fev",  "Mar",  "Abr",  "Mai",  "Jun",  "Jul",  "Ago", "Set", "Nov", "Dez"]
       }
 
       this.markers = {

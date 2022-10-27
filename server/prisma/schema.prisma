@@ -1,0 +1,42 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Mesa {
+  id         String @id @default(uuid())
+  numeroMesa Int    @unique
+  assentos   Int
+}
+
+model Pedido {
+  id      String @id @default(uuid())
+  contaId String
+  Conta   Conta  @relation(fields: [contaId], references: [id])
+}
+
+model Conta {
+  id               String   @id @default(uuid())
+  assentosOcupados Int
+  horaAbertura     String
+  horaDoFechamento String
+  status           Int
+  pedidos          Pedido[]
+}
+
+model ItemCardapio {
+  id         String @id @default(uuid())
+  nome       String
+  descricao  String
+  preco      Float
+  quantidade Int
+  imagem     String
+  categoria  String
+}
