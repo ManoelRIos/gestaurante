@@ -15,3 +15,54 @@
   padding: .4rem 1.6rem ;
   border-radius: .4rem;
 }
+
+
+
+.filter-input {
+  margin-left: 2rem;
+}
+
+mat-label {
+  color: #060408;
+}
+
+mat-form-field.mat-focused{
+  border-color: #060408;
+}
+
+.table-card {
+  width: 95%;
+  margin: 1.3rem 7.2rem 0 2rem;
+  border-radius: 21px;
+  background-color: #fff;
+}
+
+
+.mat-form-field input {
+  padding-bottom: 1rem;
+}
+
+table {
+  width: 100%;
+  border-bottom-left-radius: 21px;
+}
+
+table .mat-header-row {
+  background-color: #FFD152;
+  border-top-left-radius: 21px;
+}
+
+table th {
+  font-size: 1.6rem;
+  color: #060408;
+  font-family: 'Poppins', sans-serif;
+}
+table td {
+  font-size: 1.4rem;
+  color: #060408;
+  font-family: 'Poppins', sans-serif;
+}
+
+table .mat-row:nth-child(2n){
+  background-color: #E9E1D6;
+}
