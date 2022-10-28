@@ -1,3 +1,4 @@
+import { ItensCardapioComponent } from './pages/itensCardapio/itensCardapio.component';
 import { MesasComponent } from './pages/mesas/mesas.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'estoque', component: EstoqueComponent},  
   { path: 'financeiro', component: FinanceiroComponent},
   { path: 'funcionarios', component: FuncionariosComponent},
+  { path: 'cardapio/itens-do-cardapio', component: ItensCardapioComponent}
 ];
 
 @NgModule({

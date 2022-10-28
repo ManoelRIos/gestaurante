@@ -1,0 +1,17 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  padding-right: 4.4rem;
+}
+
+.header .btn-group {
+  display: flex;
+  gap: 4rem;
+}
+
+.header .btn-group button {
+  padding: .4rem 1.6rem ;
+  border-radius: .4rem;
+}

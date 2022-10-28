@@ -1,3 +1,12 @@
-<p>
-  itensCardapio works!
-</p>
+<div class="header">
+  <app-title title="Itens do cardápio"></app-title>
+
+  <div class="btn-group">
+    <a mat-flat-button color="warn">Adicionar item no cardápio</a>
+    <a mat-stroked-button color="warn" routerLink="/cardapio"
+      >Visualizar cardápio</a
+    >
+  </div>
+</div>
+
+<app-table></app-table>

@@ -1,4 +1,4 @@
-@import '../../../styles.scss';
+@import '../../../theme.scss';
 
 .header {
   display: flex;
@@ -11,11 +11,6 @@
 .header .btn-group {
   display: flex;
   gap: 4rem;
-}
-
-.header .btn-group button {
-  padding: .4rem 1.6rem ;
-  border-radius: .4rem;
 }
 
 .content-item-cardapio{
