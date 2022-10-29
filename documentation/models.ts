@@ -60,14 +60,7 @@ class Funcionario {
   /* VARIABLES */
   id: number;
   nome: string;
-  cpf;
-  cep; //Atualizar dados aprtir da Api VIACEP;
-  endereco;
-  numeroEndereco;
-  estado;
   email;
-  celular;
-  usuario;
   senha;
   cargo;
   /* END VARIABLES */ 

@@ -17,11 +17,12 @@ export class PedidosComponent implements OnInit {
     { id:5, nome:'Coxinha', desc: 'coxinha de frango feita no óleo de onte' , valo: 6 }
   ];
 
-  
+  totalPedidos = this.pedidos.length;
 
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
 }

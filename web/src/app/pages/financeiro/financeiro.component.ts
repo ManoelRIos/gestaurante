@@ -1,6 +1,11 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ApexAxisChartSeries, ApexChart, ApexFill, ApexMarkers, ApexStroke, ApexTitleSubtitle, ApexXAxis } from 'ng-apexcharts';
 
+class Vendas{
+  x: string[] = ['jan', 'fev', 'mar', 'abr', 'mai'];
+  y: number = 0;
+}
+
 @Component({
   selector: 'app-financeiro',
   templateUrl: './financeiro.component.html',
@@ -20,26 +25,38 @@ export class FinanceiroComponent implements OnInit {
   colors!: string[];
 
   vendas = [
-    {x: 'jan', y: 10}
-  ] 
+    {x: 'jan', y: 100},
+    {x: 'fev', y: 15},
+    {x: 'mar', y: 1000},
+    {x: 'abr', y: 10},
+    {x: 'mai', y: 2000},
+  ]
+  
+  totalVendas: number = 0;
 
-  totalVendas () {
+  ngOnInit(){
+    this.totalVendasMes();
+    this.initializeChartOptions();
+  }
+
+  constructor() {  }
+
+  totalVendasMes () {
     var anoAtual = new Date().getFullYear()
     var mesAtual = new Date().getMonth()
     var diaAtual =  new Date().getDate()
     var dataAtual = new Date(anoAtual, mesAtual, diaAtual)
-    var mes = dataAtual.toLocaleDateString('default', {month: "long"})    
+    var mes = dataAtual.toLocaleDateString('default', {month: "long"}) 
+    for(let venda of this.vendas){
+      console.log("TOTAL VENDA:")
+      console.log(this.totalVendas)
+      console.log("VENDA Y:")
+      console.log(venda.y)
+      this.totalVendas  += venda.y
+    } 
   }
 
-
-
-  ngOnInit(){
-    this.totalVendas()
-    this.initializeChartOptions();
-  }
-  constructor() {  }
-
-    initializeChartOptions() {
+  initializeChartOptions() {
 
       this.title = {
         text: "Receitas X Data",
@@ -87,8 +104,5 @@ export class FinanceiroComponent implements OnInit {
           size: 7
         }
       }
-
-
-    };
-
+  };
 }

@@ -1,7 +1,7 @@
 <div class="header">
   <app-title [title]="title"></app-title>
 
-  <div class="btn-group">
+  <div *ngIf="isGerente" class="btn-group">
     <a routerLink="itens-do-cardapio" mat-flat-button color="warn">
       Itens do cardápio
     </a>
@@ -16,16 +16,17 @@
 <div class="container">
 
   <div class="category">
-    <button *ngFor="let prato of pratos"  class="card-cat">
-      {{prato.category}}  
+    <button *ngFor="let itemCardapio of cardapio"  class="card-cat">
+      {{itemCardapio.categoria}}  
     </button>
   </div>
 
   <div class="content-item-cardapio">
-    <app-card-item-cardapio 
-      *ngFor="let prato of pratos" 
-    >
-    </app-card-item-cardapio>
+    <div class="itemCardapio" *ngFor="let itemCardapio of cardapio" >
+      <app-card-item-cardapio 
+      >
+      </app-card-item-cardapio>
+    </div>
   </div>
   
 </div>

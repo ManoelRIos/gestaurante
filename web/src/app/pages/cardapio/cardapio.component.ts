@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-cardapio',
@@ -7,17 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardapioComponent implements OnInit {
 
+  //Validar se o login foi feito por um gerente
+  @Input() isGerente: boolean = true;
+
   public title = 'Cardápio';
 
   pratoSelected!: string;
+  public filterCardapio: boolean = false;
+  public categoriaSelected: string = '';
 
-  public pratos = [
-    { id:1, nome:'Batata', desc: 'Batata com cheddar e bacon', valor: 35, category: "Pizza"},
-    { id:2, nome:'Batata', desc: 'Batata com cheddar e bacon', valor: 35, category: "Bebidas"},
-    { id:3, nome:'Batata', desc: 'Batata com cheddar e bacon', valor: 35, category: "Sobremesas"},
-    { id:4, nome:'Batata', desc: 'Batata com cheddar e bacon', valor: 35, category: "Porções"},
-    { id:5, nome:'Batata', desc: 'Batata com cheddar e bacon', valor: 35, category: "Cervejas"},
-    { id:6, nome:'Batata', desc: 'Batata com cheddar e bacon', valor: 35, category: "Destilados"},
+  public cardapio = [
+    { id:1, nome:'Batata', desc: 'Batata com cheddar e bacon', valor: 35, categoria: "Pizza"},
+    { id:2, nome:'Batata', desc: 'Batata com cheddar e bacon', valor: 35, categoria: "Bebidas"},
+    { id:3, nome:'Batata', desc: 'Batata com cheddar e bacon', valor: 35, categoria: "Sobremesas"},
+    { id:4, nome:'Batata', desc: 'Batata com cheddar e bacon', valor: 35, categoria: "Porções"},
+    { id:5, nome:'Batata', desc: 'Batata com cheddar e bacon', valor: 35, categoria: "Cervejas"},
+    { id:6, nome:'Batata', desc: 'Batata com cheddar e bacon', valor: 35, categoria: "Destilados"},
 
   ]
 
