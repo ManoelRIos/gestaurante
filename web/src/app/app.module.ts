@@ -26,6 +26,8 @@ import { FinanceiroComponent } from './pages/financeiro/financeiro.component';
 import { FuncionariosComponent } from './pages/funcionarios/funcionarios.component';
 import { TableComponent } from './components/table/table.component';
 import { ItensCardapioComponent } from './pages/itensCardapio/itensCardapio.component';
+import { CardPedidoComponent } from './components/card-pedidos/card-pedido/card-pedido.component';
+import { LoginComponent } from './pages/login/login.component';
 
 @NgModule({
   declarations: [					
@@ -43,7 +45,9 @@ import { ItensCardapioComponent } from './pages/itensCardapio/itensCardapio.comp
     FinanceiroComponent,
     FuncionariosComponent,
     TableComponent,
-    ItensCardapioComponent
+    ItensCardapioComponent,
+    CardPedidoComponent,
+    LoginComponent
    ],
   imports: [
     NgApexchartsModule,

@@ -1,9 +1,62 @@
-<div class="header">
-  <app-title title="Mesas"></app-title>
-  <button (click)="openModalCadastrarMesa()" mat-flat-button color="warn">
-    Cadastrar Mesa
-  </button>
+<!-- TODAS MESAS -->
+<div *ngIf="!mesaSelected" class="mesas">
+  <div class="header">
+    <app-title title="Mesas"></app-title>
+    <button (click)="openModalCadastrarMesa()" mat-flat-button color="warn">
+      Cadastrar Mesa
+    </button>
+  </div>
+
+  <div class="cards-mesas">
+    <app-card-mesa
+     *ngFor="let mesa of mesas"
+     (click)="selectMesa(mesa)"
+     [numeroMesa]="mesa.numeroMesa"
+     [assentos]="mesa.assentos"
+     [status]="mesa.status"
+     >
+    </app-card-mesa>
+  </div>
 </div>
 
-<app-card-mesa></app-card-mesa>
+<!-- MESA DETALHE -->
+<div *ngIf="mesaSelected" class="mesa">
+  <div class="header">
+    <app-title title="Mesa #{{mesaSelected.numeroMesa}}"></app-title>
+    <div class="btn-group">
+      <button *ngIf="!mesaSelected.status" (click)="mesaSelected.status = true" mat-flat-button color="warn">
+        Abrir conta
+      </button>
+      <button *ngIf="mesaSelected.status" (click)="mesaSelected.status = false" mat-flat-button color="warn">
+        Fechar conta
+      </button>
+      <button (click)="mesaSelected = null" mat-stroked-button color="warn">
+        Voltar
+      </button>
+    </div>
+  </div>
+  
+  <div class="card-info-mesa">
+    <div class="info-mesa">
+      <p>Pedidos: {{mesaSelected.assentos}}</p>
+      <!-- Informação da conta -->
+      <p>Pessoas: <input type="number" value="{{mesaSelected.assentos}}"></p>
+      <p>Status: <span> {{mesaSelected.status? "Aberta" : "Fechada"}}</span></p>
+      <p>Início:<span> 00:00:00</span></p>
+      <p>Garçom: 
+        <select name="" id="" class="garcom">
+          <option value="">Nenhum</option>
+          <option value="manual">Manual</option>
+          <option value="wesley">Wesley</option>
+          <option value="renault">Renault</option>
+        </select>
+      </p>
+    </div>
 
+    <button mat-flat-button color="warn">
+      Adicionar pedido
+    </button>
+  </div>
+
+  <app-card-pedidos></app-card-pedidos>
+</div>

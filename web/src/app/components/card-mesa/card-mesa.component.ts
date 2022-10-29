@@ -1,11 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-
-interface Mesa {
-  id: number;
-  numeroMesa: number;
-  assentos: number;
-  status: boolean;
-}
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-card-mesa',
@@ -13,16 +6,11 @@ interface Mesa {
   styleUrls: ['./card-mesa.component.scss']
 })
 
-
 export class CardMesaComponent implements OnInit {
 
-  
-  public mesas: Mesa[] = [
-    { id: 1, numeroMesa: 1, assentos: 4, status: false},
-    { id: 2, numeroMesa: 2, assentos: 8, status: true},
-    { id: 3, numeroMesa: 3, assentos: 2, status: false},
-    { id: 3, numeroMesa: 3, assentos: 2, status: false}
-  ];
+  @Input() numeroMesa!: number;
+  @Input() assentos!: number;
+  @Input() status!: boolean;
   
   public isSelected: boolean = false;
   
@@ -32,7 +20,7 @@ export class CardMesaComponent implements OnInit {
 
   setCurrentStyle(){
     this.currentStyle = {
-      'background-color': false ?
+      'background-color': this.status ?
        '#CF171D' : '#FFD152'
     }
   }

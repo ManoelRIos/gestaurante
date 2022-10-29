@@ -1,4 +1,6 @@
 
 
-<app-menu>
+<app-menu *ngIf="isLogged" >
 </app-menu>
+
+<app-login *ngIf="!isLogged" ></app-login>

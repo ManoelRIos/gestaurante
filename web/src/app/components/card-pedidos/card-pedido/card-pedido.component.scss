@@ -1,0 +1,23 @@
+.card-pedido {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #F5F3F7;
+  border-radius: .9rem;
+  padding: 2rem;
+  margin: 2rem 0;
+}
+
+.card-pedido .info-pedido p span {
+  font-weight: bold;
+}
+
+.card-pedido .mat-icon{
+  color: red;
+  transition: .3s;
+  cursor: pointer;
+}
+
+.card-pedido .mat-icon:hover{
+  transform: translateY(-5px);
+}

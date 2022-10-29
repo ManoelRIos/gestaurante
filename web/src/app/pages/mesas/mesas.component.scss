@@ -7,5 +7,67 @@
   padding-right: 4.4rem;
 }
 
+.cards-mesas{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;  
+  gap: 2.5rem;  
+  margin: 0 2rem;
+}
+
+.btn-group {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.card-info-mesa {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 4.4rem 4.4rem 3rem 2rem;
+  background-color: white;
+  padding: 2.4rem;
+  border-radius: .9rem;
+}
+
+.info-mesa {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  gap: 2rem;
+}
+
+.info-mesa p input {
+  border: 1px solid #E9E1D6;
+  border-radius: .9rem;
+  padding: .5rem 1rem;
+  width: 10rem;
+}
+
+.info-mesa p input:focus {
+  outline: 0;
+  border-color: #897963;
+}
+
+.info-mesa p span {
+  font-weight: bold;
+}
+
+.info-mesa p select {
+  background-color: #efe4d5;
+  border-radius: .6rem;
+  padding: .4rem 1rem;
+}
+
+.info-mesa p select:focus {
+  outline: 0;
+  border-color: #897963;
+}
+
+.info-mesa p select::after {
+  background-color: white;
+}
+
+
 
 
