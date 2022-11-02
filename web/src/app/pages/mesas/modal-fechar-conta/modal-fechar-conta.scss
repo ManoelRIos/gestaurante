@@ -1,0 +1,32 @@
+@import '../../../../styles.scss';
+
+.modal-fechar-conta {
+  width: 50rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+h1 {
+  text-align: center;
+  font-size: 3.6rem;
+  font-weight: bold;
+}
+
+.btn-group{
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  font-size: 1.6rem;  
+}
+
+.btn-group button{
+  border-radius: .9rem;
+  padding: 1.3rem 2.2rem;
+  background-color: $red;
+  color: $white;
+}
+
+.btn-group button:nth-child(2){
+  background-color: $yellow;
+}

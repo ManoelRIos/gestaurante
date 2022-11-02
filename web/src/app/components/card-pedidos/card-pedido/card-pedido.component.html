@@ -1,11 +1,22 @@
-<div class="card-pedido">
+
+
+<div class="card-pedido"  >
+
   <div class="info-pedido">
-    <p>Mesa: <span>2</span> </p>
-    <p>Pedido: <span>X-Salada</span></p>
-    <p>Quantidade: <span>3</span></p>
-    <p>Observacao: <span> Sem salada</span></p>
-    <p>Tempo: <span>09:15</span></p>
+    <h2>Pedido: {{id}}</h2>
+    <p>Mesa: <span>{{numeroMesa}}</span> </p> 
+
+    <div *ngFor="let itemPedido of itensPedido" >
+      <p>Ítem: <span>{{itemPedido.itensCardapio.nome}}</span></p>
+      <p>Quantidade: <span>{{itemPedido.qtd}}</span></p>
+    </div>
+    
+    <p>Observacao: <span>{{observacao}}</span></p>
+    <p>Tempo: <span>{{tempoDecorrido}} min</span></p>
   </div>
 
-  <mat-icon>delete_forever</mat-icon>
+  <div class="btn-action">
+    <mat-icon>delete_forever</mat-icon>
+    <mat-icon (click)="atualizaStatusPedido()">forward</mat-icon>
+  </div>
 </div>

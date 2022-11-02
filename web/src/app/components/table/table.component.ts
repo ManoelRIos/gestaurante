@@ -37,12 +37,12 @@ export interface Funcionario {
 }
 
 const funcionarios: Funcionario[] =[
-  { id: 1, userName: "Wisley", name: "Wisley Aquino", email: "wisley@gmail.com", status: true, grupo: "Gerente" },
-  { id: 2, userName: "Manual", name: "Manual Rios", email: "manual@gmail.com", status: false, grupo: "Cozinha" },
-  { id: 3, userName: "Jpog", name: "Jpog Barbosa", email: "jpog@gmail.com", status: true, grupo: "Gerente" },
-  { id: 4, userName: "Renault", name: "Renault Pedroso", email: "ren@gmail.com", status: false, grupo: "Garçom" },
-  { id: 4, userName: "Renault", name: "Renault Pedroso", email: "ren@gmail.com", status: false, grupo: "Garçom" },
-  { id: 4, userName: "Renault", name: "Renault Pedroso", email: "ren@gmail.com", status: false, grupo: "Garçom" },
-  { id: 4, userName: "Renault", name: "Renault Pedroso", email: "ren@gmail.com", status: false, grupo: "Garçom" }
+  { id: 1, userName: "Wesley", name: "Wesley Aquino", email: "Wesley@gmail.com", status: true, grupo: "Gerente" },
+  { id: 2, userName: "Manoel", name: "Manoel Rios", email: "Manoel@gmail.com", status: false, grupo: "Cozinha" },
+  { id: 3, userName: "Joao", name: "Joao Barbosa", email: "Joao@gmail.com", status: true, grupo: "Gerente" },
+  { id: 4, userName: "Renan", name: "Renan Pedroso", email: "renan@gmail.com", status: false, grupo: "Garçom" },
+
+
+  
 ];
 

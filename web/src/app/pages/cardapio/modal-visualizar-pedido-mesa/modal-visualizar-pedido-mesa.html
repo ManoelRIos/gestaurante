@@ -1,0 +1,48 @@
+<div class="modal-visualizar-pedido-mesa">
+  <h1 mat-dialog-title>Pedido</h1>
+  <div class="container">
+
+    <div class="itens-pedido">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          <p>X-Salada</p> 
+          <div class="btn-group" role="group" aria-label="Basic example">
+            <button type="button" class="btn btn-outline-danger">+</button>
+            <button type="button" class="btn qtd">3</button>
+            <button type="button" class="btn btn-outline-danger">-</button>
+          </div>
+        </li>
+        <li class="list-group-item">
+          <p>Coca-lata</p> 
+          <div class="btn-group" role="group" aria-label="Basic example">
+            <button type="button" class="btn btn-outline-danger">+</button>
+            <button type="button" class="btn qtd">3</button>
+            <button type="button" class="btn btn-outline-danger">-</button>
+          </div>
+        </li>
+        <li class="list-group-item">
+          <p>Tapioca</p> 
+          <div class="btn-group" role="group" aria-label="Basic example">
+            <button type="button" class="btn btn-outline-danger">+</button>
+            <button type="button" class="btn qtd">1</button>
+            <button type="button" class="btn btn-outline-danger">-</button>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <form action="">
+
+      
+      <div class="input-group">
+        <label for="observacao">Observação:</label>
+        <input type="text" placeholder="Ex: Sem salada"/>
+      </div>
+
+      <div class="btn-group">
+        <button class="btn-default">Fazer pedido</button>
+        <button class="btn-warn" (click)="onNoClick()">Voltar</button>
+      </div>
+    </form>
+  </div>
+</div>

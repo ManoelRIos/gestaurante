@@ -20,6 +20,8 @@ export class ItensCardapioComponent implements OnInit {
     { id: "7", nome: "T-Bone", descricao: "Renault Pedroso", preco: 220, quantidade: 3, imagem: "Garçom", categoria:"Carne" }
   ];
 
+  isCreate = false;
+
   displayedColumns: string[] = ['id', 'nome', 'preco', 'quantidade', 'categoria', 'action'];
   dataSource = new MatTableDataSource<ItemCardapio>(this.itensDoCardapio);
 

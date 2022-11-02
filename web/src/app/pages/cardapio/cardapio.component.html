@@ -2,13 +2,18 @@
   <app-title [title]="title"></app-title>
 
   <div *ngIf="isGerente" class="btn-group">
-    <a routerLink="itens-do-cardapio" mat-flat-button color="warn">
+    <a *ngIf="!mostrarCardapio" routerLink="itens-do-cardapio" mat-flat-button color="warn">
       Itens do cardápio
     </a>
-  
-    <button mat-flat-button color="warn">
-      Alterar cardápio
+    
+    <button *ngIf="mostrarCardapio" (click)="openModalVisualizarPedidoMesa()" mat-flat-button color="warn">
+      Visualizar pedido
     </button>
+
+    <button (click)="mostrarCardapio" *ngIf="mostrarCardapio" mat-stroked-button color="warn">
+      Voltar
+    </button>
+
   </div>
 
 </div>

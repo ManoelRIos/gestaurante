@@ -66,3 +66,32 @@ table td {
 table .mat-row:nth-child(2n){
   background-color: #E9E1D6;
 }
+
+.create-item-cardapio form button {
+  margin-left: 40%;
+}
+
+.create-item-cardapio form .inputs{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  gap: 3rem;
+  padding: 5rem;
+}
+
+.create-item-cardapio .input-group{  
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: .5rem;
+  margin-bottom: 2rem;
+}
+
+.create-item-cardapio .input-group label{
+  font-size: 1.6rem;
+}
+
+.create-item-cardapio .input-group input{
+  padding: 1rem ;
+  border: 1px solid #D2D2D2;
+  border-radius: .9rem !important;
+}

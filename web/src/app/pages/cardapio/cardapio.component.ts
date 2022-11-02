@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-cardapio',
@@ -9,6 +10,7 @@ export class CardapioComponent implements OnInit {
 
   //Validar se o login foi feito por um gerente
   @Input() isGerente: boolean = true;
+  @Input() mostrarCardapio!: boolean;
 
   public title = 'Cardápio';
 
@@ -34,9 +36,31 @@ export class CardapioComponent implements OnInit {
     this.pratoSelected = '';
   }
 
-  constructor() { }
+  constructor(public modal: MatDialog) { }
 
   ngOnInit(): void {
   }
 
+  openModalVisualizarPedidoMesa(){
+    this.modal.open(ModalVisualizarPedidoMesa)
+  }
 }
+
+//Modal de visualizar pedidos de mesa
+@Component({
+  selector: 'modal-visualizar-pedido-mesa',
+  templateUrl: './modal-visualizar-pedido-mesa/modal-visualizar-pedido-mesa.html',
+  styleUrls: ['./modal-visualizar-pedido-mesa/modal-visualizar-pedido-mesa.scss']
+})
+export class ModalVisualizarPedidoMesa {
+  constructor(public modalRef: MatDialogRef<ModalVisualizarPedidoMesa>) {}
+
+  onNoClick(): void {
+    this.modalRef.close();
+  }
+}
+
+export class ListSelectionExample {
+  typesOfShoes: string[] = ['Boots', 'Clogs', 'Loafers', 'Moccasins', 'Sneakers'];
+}
+

@@ -11,12 +11,13 @@ import { Mesa } from 'src/app/models/Mesa';
 export class MesasComponent implements OnInit {
 
   public mesas: Mesa[] = [
-    {id: "1", numeroMesa: 1, assentos: 8, status: false },
+    {id: "1", numeroMesa: 1, assentos: 0, status: false },
     {id: "2", numeroMesa: 2, assentos: 6, status: true },
     {id: "3", numeroMesa: 3, assentos: 2, status: true },
-    {id: "4", numeroMesa: 4, assentos: 4, status: false },
+    {id: "4", numeroMesa: 4, assentos: 0, status: false },
   ]
 
+  public mostrarCardapio = false;
   public mesaSelected: any;
   public modalIsOpen = false;
   public title = 'Mesas';
@@ -30,20 +31,21 @@ export class MesasComponent implements OnInit {
     this.modal.open(ModalCadastrarMesa)
   }
 
+  openModalFecharConta(){
+    this.modal.open(ModalFecharConta)
+  }
+
+
   selectMesa(mesa: Mesa){
     this.mesaSelected = mesa;
   }
 }
 
-
-
-
-
 //Modal de cadastro de mesa
 @Component({
   selector: 'modal-cadastrar-mesa',
-  templateUrl: './modal-cadastrar-mesa.html',
-  styleUrls: ['./modal-cadastrar-mesa.scss']
+  templateUrl: './modal-cadastrar-mesa/modal-cadastrar-mesa.html',
+  styleUrls: ['./modal-cadastrar-mesa/modal-cadastrar-mesa.scss']
 })
 export class ModalCadastrarMesa {
   constructor(public modalRef: MatDialogRef<ModalCadastrarMesa>) {}
@@ -52,4 +54,19 @@ export class ModalCadastrarMesa {
     this.modalRef.close();
   }
 }
+
+//Modal de cadastro de mesa
+@Component({
+  selector: 'modal-fechar-conta',
+  templateUrl: './modal-fechar-conta/modal-fechar-conta.html',
+  styleUrls: ['./modal-fechar-conta/modal-fechar-conta.scss']
+})
+export class ModalFecharConta {
+  constructor(public modalRef: MatDialogRef<ModalFecharConta>) {}
+
+  onNoClick(): void {
+    this.modalRef.close();
+  }
+}
+
 

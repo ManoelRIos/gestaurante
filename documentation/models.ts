@@ -19,7 +19,8 @@ class Conta {
   horaAbertura: number;
   horaDoFechamento: Date;
   status; //Aberta ou fechad: numbera
-  pedidos: number;
+  mesa: Mesa
+  pedidos: Pedido;
   // 1 Conta POSSUI1 N Pedidos
 }
 

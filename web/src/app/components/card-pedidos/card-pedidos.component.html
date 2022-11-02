@@ -5,11 +5,18 @@
         <div class="header-sum">
           <h2>Pendente</h2>
           <div class="qtd-pedidos">
-            <h2>10</h2>
+            <h2>{{pedidosPendente.length}}</h2>
           </div>
         </div>
       </summary>
-      <app-card-pedido></app-card-pedido>
+      <app-card-pedido *ngFor="let pedido of pedidosPendente" 
+        [id]="pedido.id"
+        [numeroMesa]="pedido.numeroMesa"
+        [itensPedido]="pedido.itensPedido"
+        [observacao]="pedido.observacao"
+        [tempoDecorrido]="pedido.tempoDecorrido"   
+      >
+      </app-card-pedido>
     </details>
   </div>
 
@@ -19,11 +26,18 @@
         <div class="header-sum">
           <h2>Em preparo</h2>
           <div class="qtd-pedidos">
-            <h2>10</h2>
+            <h2>{{pedidosEmPreparo.length}}</h2>
           </div>
         </div>
       </summary>
-
+      <app-card-pedido *ngFor="let pedido of pedidosEmPreparo" 
+      [id]="pedido.id"
+      [numeroMesa]="pedido.numeroMesa"
+      [itensPedido]="pedido.itensPedido"
+      [observacao]="pedido.observacao"
+      [tempoDecorrido]="pedido.tempoDecorrido"
+    >
+    </app-card-pedido>
     </details>
   </div>
 
@@ -33,10 +47,19 @@
         <div class="header-sum">
           <h2>Conluído</h2>
           <div class="qtd-pedidos">
-            <h2>10</h2>
+            <h2>{{pedidosConcluido.length}}</h2>
           </div>
         </div>
       </summary>
-   
+      <app-card-pedido *ngFor="let pedido of pedidosConcluido" 
+      [id]="pedido.id"
+      [numeroMesa]="pedido.numeroMesa"
+      [itensPedido]="pedido.itensPedido"
+      [observacao]="pedido.observacao"
+      [tempoDecorrido]="pedido.tempoDecorrido"
+    >
+    </app-card-pedido>
     </details>
   </div>
+
+  <h2></h2>

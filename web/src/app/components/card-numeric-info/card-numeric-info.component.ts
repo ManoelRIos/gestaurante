@@ -9,7 +9,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class CardNumericInfoComponent implements OnInit {
 
   @Input () text?: string;
-  @Input () value?: number;
+  @Input () value?: Number;
   @Input () color: string = "black";
   @Input () isPrice?: boolean = false;
 

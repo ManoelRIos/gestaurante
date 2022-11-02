@@ -25,10 +25,10 @@ export class FinanceiroComponent implements OnInit {
   colors!: string[];
 
   vendas = [
-    {x: 'jan', y: 100},
-    {x: 'fev', y: 15},
+    {x: 'jan', y: 3000},
+    {x: 'fev', y: 1500},
     {x: 'mar', y: 1000},
-    {x: 'abr', y: 10},
+    {x: 'abr', y: 1000},
     {x: 'mai', y: 2000},
   ]
   
@@ -70,7 +70,7 @@ export class FinanceiroComponent implements OnInit {
       }
 
       this.series = [{
-        name: 'Receita',
+        name: 'Lucro',
         data: this.vendas
       }]
 

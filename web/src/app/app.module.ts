@@ -29,6 +29,7 @@ import { ItensCardapioComponent } from './pages/itensCardapio/itensCardapio.comp
 import { CardPedidoComponent } from './components/card-pedidos/card-pedido/card-pedido.component';
 import { LoginComponent } from './pages/login/login.component';
 
+
 @NgModule({
   declarations: [					
     AppComponent,

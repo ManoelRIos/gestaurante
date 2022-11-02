@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FuncionariosComponent implements OnInit {
 
+  isEdit = false;
+  isCreate = false;
+
   constructor() { }
 
   ngOnInit() {
   }
+
 
 }

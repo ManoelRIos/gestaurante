@@ -1,3 +1,52 @@
-<app-title title="Funcionários"></app-title>
+<div class="header">
+  <app-title *ngIf="!isEdit && !isCreate" title="Funcionários"></app-title>
+  <app-title *ngIf="isEdit" title="Cadastrar funcionario"></app-title>
+  <app-title *ngIf="isCreate" title="Editar funcionario"></app-title>
 
-<app-table></app-table>
+  <button (click)="isCreate = true" *ngIf="!isEdit && !isCreate" mat-flat-button color="warn">
+    Cadastrar funcionário
+  </button>
+
+  <button (click)="isCreate = false" *ngIf="isEdit || isCreate" mat-stroked-button color="warn">
+    Voltar
+  </button>
+</div>
+
+<!-- Consultar Funcionarios -->
+<div *ngIf="!isCreate && !isEdit" class="consultar-funcionarios">
+  <app-table></app-table>
+</div>
+
+<div *ngIf="isCreate" class="create-funcionarios">
+  <form action="">
+
+    <div class="inputs">
+      <div class="input-group">
+        <label for="numeroMesa">Nome:</label>
+        <input type="text" required />
+      </div>
+      
+      <p>
+        Grupo:
+        <select name="" id="" class="garcom">
+          <option value="garcom">Garçom</option>
+          <option value="gerente">Gerente</option>
+          <option value="cozinha">Cozinha</option>
+        </select>
+      </p>
+  
+      <div class="input-group">
+        <label for="senha">Senha:</label>
+        <input type="password" placeholder="******" required />
+      </div>
+  
+      <div class="input-group">
+        <label for="email">Email:</label>
+        <input type="email" placeholder="Ex: email@email" required />
+      </div>
+    </div>
+
+  <button mat-flat-button color="warn">Criar funcionário</button>
+  </form>
+  
+</div>
