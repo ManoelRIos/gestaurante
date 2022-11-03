@@ -28,6 +28,7 @@ import { TableComponent } from './components/table/table.component';
 import { ItensCardapioComponent } from './pages/itensCardapio/itensCardapio.component';
 import { CardPedidoComponent } from './components/card-pedidos/card-pedido/card-pedido.component';
 import { LoginComponent } from './pages/login/login.component';
+import { ModalCancelarPedido } from './components/card-pedidos/modal-cancelar-pedido/modal-cancelar-pedido';
 
 
 @NgModule({
@@ -39,6 +40,7 @@ import { LoginComponent } from './pages/login/login.component';
     MenuComponent,    
     TitleComponent,
     EstoqueComponent,            
+    CardPedidoComponent,
     CardPedidosComponent,
     CardNumericInfoComponent,
     CardMesaComponent,
@@ -47,8 +49,8 @@ import { LoginComponent } from './pages/login/login.component';
     FuncionariosComponent,
     TableComponent,
     ItensCardapioComponent,
-    CardPedidoComponent,
-    LoginComponent
+    LoginComponent,
+    ModalCancelarPedido
    ],
   imports: [
     NgApexchartsModule,

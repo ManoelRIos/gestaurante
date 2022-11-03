@@ -1,6 +1,8 @@
 import { ItemPedido } from 'src/app/models/ItemPedido';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Pedido } from 'src/app/models/Pedido';
+import { MatDialog } from '@angular/material/dialog';
+import { ModalCancelarPedido } from './modal-cancelar-pedido/modal-cancelar-pedido';
 
 @Component({
   selector: 'app-card-pedidos',
@@ -9,33 +11,49 @@ import { Pedido } from 'src/app/models/Pedido';
 })
 export class CardPedidosComponent implements OnInit {
 
-  @Input() pedidos!: Pedido[];
+  @Input() pedidos: Pedido[] = [];
 
-  pedidosPendente: Pedido[] = [];
+  pedidosPendente: Pedido[]= [];
   pedidosEmPreparo: Pedido[] = [];
   pedidosConcluido: Pedido[] = [];
 
-  constructor() { }
-
-  ngOnInit() {
-    this.calcPedidosStatus(this.pedidos)
+  constructor(public modal: MatDialog) { 
+    
   }
 
-  atualizaStatusPedido(pedidos: Pedido[]) {      
+  ngOnInit() {    
+    this.definePedidos()
   }
 
-  calcPedidosStatus(pedidos: Pedido[]) {
-    pedidos.forEach(pedido => {    
-      if(pedido.status == 0){
-        this.pedidosPendente.push(pedido)
-      } else if (pedido.status == 1) {
-        this.pedidosEmPreparo.push(pedido)
-      } else if (pedido.status == 2) {
-        this.pedidosConcluido.push(pedido)
-      }
+  onAtualizaStatusPedido(idPedido: string) {   
+    console.log("ok")       
+    var pedido = this.pedidos.find(({id}) => id === idPedido)
+    if(pedido){
+      pedido.status += 1    
+    }     
+    this.definePedidos()
+  }
+
+  onCheckPedido(pedidoSelect: Pedido){
+    //DeletarPedido
+    this.definePedidos()
+  }
+
+  definePedidos() {
+    this.pedidosPendente = this.pedidos.filter(({status}) => status === 0);
+    this.pedidosEmPreparo = this.pedidos.filter(({status}) => status === 1);
+    this.pedidosConcluido = this.pedidos.filter(({status}) => status === 2);
+  }
+
+  openModalCancelarPedido(pedido: Pedido){ 
+    console.log('a')
+    
+    const modalRef = this.modal.open(ModalCancelarPedido, {
+      data: pedido  
+    })
+
+    modalRef.afterClosed().subscribe(result => {     
     });
   }
-
-
 
 }

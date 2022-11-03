@@ -14,7 +14,9 @@
         [numeroMesa]="pedido.numeroMesa"
         [itensPedido]="pedido.itensPedido"
         [observacao]="pedido.observacao"
-        [tempoDecorrido]="pedido.tempoDecorrido"   
+        [tempoDecorrido]="pedido.tempoDecorrido"           
+        (atualizaStatusPedido)="onAtualizaStatusPedido(pedido.id)"
+        (cancelaPedido)="openModalCancelarPedido(pedido)"
       >
       </app-card-pedido>
     </details>
@@ -36,6 +38,8 @@
       [itensPedido]="pedido.itensPedido"
       [observacao]="pedido.observacao"
       [tempoDecorrido]="pedido.tempoDecorrido"
+      (atualizaStatusPedido)="onAtualizaStatusPedido(pedido.id)"
+      (cancelaPedido)="openModalCancelarPedido(pedido)"
     >
     </app-card-pedido>
     </details>
@@ -57,6 +61,9 @@
       [itensPedido]="pedido.itensPedido"
       [observacao]="pedido.observacao"
       [tempoDecorrido]="pedido.tempoDecorrido"
+      [status]="true"      
+      (atualizaStatusPedido)="onAtualizaStatusPedido(pedido.id)"
+      (checkPedido)="onCheckPedido(pedido)"      
     >
     </app-card-pedido>
     </details>

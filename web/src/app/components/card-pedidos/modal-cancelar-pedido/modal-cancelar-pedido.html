@@ -1,0 +1,33 @@
+<div class="modal-visualizar-pedido-mesa">
+  <h1 mat-dialog-title>Pedido</h1>
+  <div class="container">
+
+    <div *ngFor="let item of data.itensPedido">
+      {{item.itensCardapio.nome}}
+    </div>
+
+    <div class="itens-pedido">
+      <h2>Mesa #{{data.numeroMesa}}</h2>
+      <h2>Pedido #{{data.id}}</h2>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          <p ></p> 
+          <div class="btn-group" role="group" aria-label="Basic example">
+            <button type="button" class="btn btn-outline-danger">+</button>
+            <button type="button" class="btn qtd">3</button>
+            <button type="button" class="btn btn-outline-danger">-</button>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <form action="">
+
+            
+      <div class="btn-group">
+        <button class="btn-default">Cancelar pedido</button>
+        <button class="btn-warn" (click)="onNoClick()">Voltar</button>
+      </div>
+    </form>
+  </div>
+</div>

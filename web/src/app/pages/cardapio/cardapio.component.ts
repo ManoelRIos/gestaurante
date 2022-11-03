@@ -52,6 +52,7 @@ export class CardapioComponent implements OnInit {
   templateUrl: './modal-visualizar-pedido-mesa/modal-visualizar-pedido-mesa.html',
   styleUrls: ['./modal-visualizar-pedido-mesa/modal-visualizar-pedido-mesa.scss']
 })
+
 export class ModalVisualizarPedidoMesa {
   constructor(public modalRef: MatDialogRef<ModalVisualizarPedidoMesa>) {}
 
