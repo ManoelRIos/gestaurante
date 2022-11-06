@@ -1,33 +1,28 @@
 <div class="modal-visualizar-pedido-mesa">
-  <h1 mat-dialog-title>Pedido</h1>
-  <div class="container">
+  <h1 mat-dialog-title>Deseja cancelar o pedido?</h1>
+  <p>Mesa #{{data.numeroMesa}}</p>
+  <p>Pedido #{{data.id}}</p>
 
-    <div *ngFor="let item of data.itensPedido">
-      {{item.itensCardapio.nome}}
-    </div>
-
-    <div class="itens-pedido">
-      <h2>Mesa #{{data.numeroMesa}}</h2>
-      <h2>Pedido #{{data.id}}</h2>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">
-          <p ></p> 
-          <div class="btn-group" role="group" aria-label="Basic example">
-            <button type="button" class="btn btn-outline-danger">+</button>
-            <button type="button" class="btn qtd">3</button>
-            <button type="button" class="btn btn-outline-danger">-</button>
-          </div>
-        </li>
-      </ul>
-    </div>
-
-    <form action="">
-
-            
-      <div class="btn-group">
-        <button class="btn-default">Cancelar pedido</button>
-        <button class="btn-warn" (click)="onNoClick()">Voltar</button>
-      </div>
-    </form>
+  <div class="itens-pedido">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item" *ngFor="let item of data.itensPedido">
+        <div class="item" >
+          <input id="[{{item.id}}]" type="checkbox" />
+          <label for="[{{item.id}}]">{{item.itensCardapio.nome}}</label>
+        </div>
+        <div class="btn-group" role="group" aria-label="Basic example">
+          <button type="button" class="btn btn-danger" (click)="incrementaQtdItemPedido(item)" >+</button>
+          <button type="button" class="btn qtd">{{item.qtd}}</button>
+          <button type="button" class="btn btn-danger" (click)="decrementaQtdItemPedido(item)" >-</button>
+        </div>
+      </li>
+    </ul>
   </div>
+
+  <form action="">
+    <div class="btn-group">
+      <button class="btn btn-danger">Cancelar pedido</button>
+      <button class="btn btn-warning" (click)="onNoClick()">Voltar</button>
+    </div>
+  </form>
 </div>

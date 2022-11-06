@@ -1,0 +1,52 @@
+.modal-visualizar-pedido-mesa {
+  padding: 1rem;
+}
+
+.modal-visualizar-pedido-mesa h1 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 3.2rem;
+}
+
+.itens-pedido {
+  background-color: #F5F3F7;
+  padding: 1.8rem;
+  border-radius: .9rem;
+}
+
+.list-group-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background-color: #F5F3F7;
+}
+
+.list-group-item .item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.list-group-item .item label{
+  font-size: 1.6rem;
+  margin: 0;
+}
+
+.list-group-item .btn-group .btn {
+  font-size: 1.4rem;
+}
+
+.list-group-item .btn-group button.qtd {
+  border-top: 1px solid #BB2D3B;
+  border-bottom: 1px solid #BB2D3B;
+}
+
+form .btn-group{
+  padding-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+form .btn-group .btn {}

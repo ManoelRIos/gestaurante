@@ -21,7 +21,7 @@ export class PedidosComponent implements OnInit {
       itensCardapio: 
         {id: '2', nome: 'Coca-Lata', preco: 15, categoria: 'Bebida'},}
     ], 
-     observacao: '', status: 2},
+     observacao: '', status: 0},
 
     { id:'2', tempoDecorrido:'1', numeroMesa: 1,
      itensPedido: [

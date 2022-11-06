@@ -45,9 +45,8 @@ export class CardPedidosComponent implements OnInit {
     this.pedidosConcluido = this.pedidos.filter(({status}) => status === 2);
   }
 
-  openModalCancelarPedido(pedido: Pedido){ 
-    console.log('a')
-    
+  openModalCancelarPedido(pedido: Pedido){    
+    console.log(pedido) 
     const modalRef = this.modal.open(ModalCancelarPedido, {
       data: pedido  
     })
