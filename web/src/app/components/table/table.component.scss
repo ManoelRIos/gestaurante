@@ -43,6 +43,12 @@ table td {
   font-size: 1.4rem;
   color: #060408;
   font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  transition: .3s;
+}
+
+table td:hover{
+  opacity: .5;
 }
 
 table .mat-row:nth-child(2n){

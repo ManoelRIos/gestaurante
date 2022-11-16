@@ -1,7 +1,9 @@
 <div class="modal-visualizar-pedido-mesa">
   <h1 mat-dialog-title>Deseja cancelar o pedido?</h1>
-  <p>Mesa #{{data.numeroMesa}}</p>
-  <p>Pedido #{{data.id}}</p>
+  <div class="info-pedido">
+    <p>Mesa #{{data.numeroMesa}}</p>
+    <p>Pedido #{{data.id}}</p>
+  </div>
 
   <div class="itens-pedido">
     <ul class="list-group list-group-flush">
@@ -21,8 +23,8 @@
 
   <form action="">
     <div class="btn-group">
-      <button class="btn btn-danger">Cancelar pedido</button>
-      <button class="btn btn-warning" (click)="onNoClick()">Voltar</button>
+      <button mat-stroked-button color="warn">Cancelar pedido</button>
+      <button mat-flat-button color="warn" (click)="onNoClick()">Voltar</button>
     </div>
   </form>
 </div>
