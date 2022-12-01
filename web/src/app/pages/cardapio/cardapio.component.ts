@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { ItemCardapio } from 'src/app/models/ItemCardapio';
+import { ItemCardapioService } from 'src/app/services/itemCardapio.service';
 
 @Component({
   selector: 'app-cardapio',
@@ -18,15 +20,29 @@ export class CardapioComponent implements OnInit {
   public filterCardapio: boolean = false;
   public categoriaSelected: string = '';
 
-  public cardapio = [
-    { id:1, nome:'Batata', desc: 'Batata com cheddar e bacon', valor: 35, categoria: "Pizza"},
-    { id:2, nome:'Batata', desc: 'Batata com cheddar e bacon', valor: 35, categoria: "Bebidas"},
-    { id:3, nome:'Batata', desc: 'Batata com cheddar e bacon', valor: 35, categoria: "Sobremesas"},
-    { id:4, nome:'Batata', desc: 'Batata com cheddar e bacon', valor: 35, categoria: "Porções"},
-    { id:5, nome:'Batata', desc: 'Batata com cheddar e bacon', valor: 35, categoria: "Cervejas"},
-    { id:6, nome:'Batata', desc: 'Batata com cheddar e bacon', valor: 35, categoria: "Destilados"},
+  public cardapio: ItemCardapio[] = []
 
-  ]
+  constructor(
+    public modal: MatDialog,
+    public itemCardapioService: ItemCardapioService
+    ) 
+    { }
+
+  ngOnInit(): void {
+    this.carregarItensCardapio()
+  }
+
+  carregarItensCardapio(){
+    this.itemCardapioService.getAll().subscribe(
+      (cardapio: ItemCardapio[]) => {
+        this.cardapio = cardapio;
+      }
+    ),
+    (error: any) => {
+      console.error(error);
+    }
+  }
+
 
   pratoSelect(prato: any){
     this.pratoSelected = prato.nome;
@@ -34,11 +50,6 @@ export class CardapioComponent implements OnInit {
 
   voltar(){
     this.pratoSelected = '';
-  }
-
-  constructor(public modal: MatDialog) { }
-
-  ngOnInit(): void {
   }
 
   openModalVisualizarPedidoMesa(){

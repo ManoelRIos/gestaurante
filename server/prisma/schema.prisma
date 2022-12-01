@@ -14,38 +14,73 @@ model Mesa {
   id         String @id @default(uuid())
   numeroMesa Int    @unique
   assentos   Int
+
+  @@map("MESA")
 }
 
 model Pedido {
-  id      String @id @default(uuid())
-  contaId String
-  Conta   Conta  @relation(fields: [contaId], references: [id])
+  id          String       @id @default(uuid())
+  itensPedido ItemPedido[]
+  contaId     String
+  Conta       Conta        @relation(fields: [contaId], references: [id])
+
+  @@map("PEDIDO")
 }
 
 model ItemPedido {
-  id             String         @id @default(uuid())
+  id             Int          @id @default(autoincrement())
   quantidade     Int
-  itemCardapio   ItemCardapio[]
-  itemCardapioId String
+  itemCardapio   ItemCardapio @relation(fields: [itemCardapioId], references: [id])
+  itemCardapioId Int          @unique
+  Pedido         Pedido       @relation(fields: [pedidoId], references: [id])
+  pedidoId       String
+
+  @@map("ITEM_PEDIDO")
 }
 
 model Conta {
   id               String   @id @default(uuid())
   assentosOcupados Int
-  horaAbertura     String
+  horaAbertura     DateTime @default(now())
   horaDoFechamento String
   status           Int
   pedidos          Pedido[]
+
+  @@map("CONTA")
 }
 
 model ItemCardapio {
-  id           String      @id @default(uuid())
-  nome         String
-  descricao    String
-  preco        Float
-  quantidade   Int
-  imagem       String
-  categoria    String
-  ItemPedido   ItemPedido? @relation(fields: [itemPedidoId], references: [id])
-  itemPedidoId String?
+  id         Int         @id @default(autoincrement())
+  nome       String
+  descricao  String
+  preco      Int
+  quantidade Int
+  imagem     String
+  categoria  String
+  Cardapio   Cardapio?   @relation(fields: [cardapioId], references: [id])
+  cardapioId String?
+  ItemPedido ItemPedido?
+
+  @@map("ITEM_CARDAPIO")
+}
+
+model Cardapio {
+  id            String         @id @default(uuid())
+  itensCardapio ItemCardapio[]
+}
+
+model Usuario {
+  id    String @id @default(uuid())
+  nome  String
+  email String
+  senha String
+  cargo Int
+
+  @@map("USUARIO")
+}
+
+model Venda {
+  id String @id @default(uuid())
+
+  @@map("Venda")
 }

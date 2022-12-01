@@ -13,9 +13,7 @@
     <button (click)="mostrarCardapio" *ngIf="mostrarCardapio" mat-stroked-button color="warn">
       Voltar
     </button>
-
   </div>
-
 </div>
 
 <div class="container">
@@ -29,6 +27,10 @@
   <div class="content-item-cardapio">
     <div class="itemCardapio" *ngFor="let itemCardapio of cardapio" >
       <app-card-item-cardapio 
+      [imagem]="itemCardapio.imagem"
+      [nome]="itemCardapio.nome"
+      [descricao]="itemCardapio.descricao"
+      [preco]="itemCardapio.preco"
       >
       </app-card-item-cardapio>
     </div>

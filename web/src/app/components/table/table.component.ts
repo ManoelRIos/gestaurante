@@ -41,6 +41,10 @@ const funcionarios: Funcionario[] =[
   { id: 2, userName: "Manoel", name: "Manoel Rios", email: "Manoel@gmail.com", status: false, grupo: "Cozinha" },
   { id: 3, userName: "Joao", name: "Joao Barbosa", email: "Joao@gmail.com", status: true, grupo: "Gerente" },
   { id: 4, userName: "Renan", name: "Renan Pedroso", email: "renan@gmail.com", status: false, grupo: "Garçom" },
+  { id: 4, userName: "Renan", name: "Renan Pedroso", email: "renan@gmail.com", status: false, grupo: "Garçom" },
+  { id: 4, userName: "Renan", name: "Renan Pedroso", email: "renan@gmail.com", status: false, grupo: "Garçom" },
+  { id: 4, userName: "Renan", name: "Renan Pedroso", email: "renan@gmail.com", status: false, grupo: "Garçom" },
+  { id: 4, userName: "Renan", name: "Renan Pedroso", email: "renan@gmail.com", status: false, grupo: "Garçom" },
 
 
   
