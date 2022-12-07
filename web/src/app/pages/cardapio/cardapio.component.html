@@ -2,38 +2,64 @@
   <app-title [title]="title"></app-title>
 
   <div *ngIf="isGerente" class="btn-group">
-    <a *ngIf="!mostrarCardapio" routerLink="itens-do-cardapio" mat-flat-button color="warn">
+    <a
+      *ngIf="!mostrarCardapio"
+      routerLink="itens-do-cardapio"
+      mat-flat-button
+      color="warn"
+    >
       Itens do cardápio
     </a>
-    
-    <button *ngIf="mostrarCardapio" (click)="openModalVisualizarPedidoMesa()" mat-flat-button color="warn">
+
+    <button
+      *ngIf="mostrarCardapio"
+      (click)="openModalVisualizarPedidoMesa()"
+      mat-flat-button
+      color="warn"
+    >
       Visualizar pedido
     </button>
 
-    <button (click)="mostrarCardapio" *ngIf="mostrarCardapio" mat-stroked-button color="warn">
+    <button
+      (click)="(mostrarCardapio)"
+      *ngIf="mostrarCardapio"
+      mat-stroked-button
+      color="warn"
+    >
       Voltar
     </button>
   </div>
 </div>
 
 <div class="container">
-
   <div class="category">
-    <button *ngFor="let itemCardapio of cardapio"  class="card-cat">
-      {{itemCardapio.categoria}}  
+    <button *ngFor="let itemCardapio of cardapio" class="card-cat">
+      {{ itemCardapio.categoria }}
     </button>
   </div>
 
-  <div class="content-item-cardapio">
-    <div class="itemCardapio" *ngFor="let itemCardapio of cardapio" >
-      <app-card-item-cardapio 
-      [imagem]="itemCardapio.imagem"
-      [nome]="itemCardapio.nome"
-      [descricao]="itemCardapio.descricao"
-      [preco]="itemCardapio.preco"
-      >
-      </app-card-item-cardapio>
+  <div class="cardapio">
+    <div class="content-item-cardapio">
+      <div class="itemCardapio" *ngFor="let itemCardapio of cardapio">
+        <app-card-item-cardapio
+          (click)="addItemPedido(itemCardapio)"
+          [imagem]="itemCardapio.imagem"
+          [nome]="itemCardapio.nome"
+          [descricao]="itemCardapio.descricao"
+          [preco]="itemCardapio.preco"
+        >
+        </app-card-item-cardapio>
+      </div>
+    </div>
+
+    <div class="cart">
+      <h2>Pedido</h2>
+      <div class="card-item" *ngFor="let itemPedido of itensPedido">
+        <!-- <img src="{{ itemPedido.itensCardapio.imagem }}" alt="" /> -->
+        <p>{{ itemPedido.itensCardapio.nome }}</p>
+        <p>qtd: {{ itemPedido.qtd }}</p>
+        <p>R$ {{ itemPedido.itensCardapio.preco }}</p>
+      </div>
     </div>
   </div>
-  
 </div>
