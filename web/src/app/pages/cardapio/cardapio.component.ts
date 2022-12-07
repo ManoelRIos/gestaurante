@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { ItemCardapio } from 'src/app/models/ItemCardapio';
+import { ItemPedido } from 'src/app/models/ItemPedido';
+import { Pedido } from 'src/app/models/Pedido';
 import { ItemCardapioService } from 'src/app/services/itemCardapio.service';
 
 @Component({
@@ -21,6 +23,9 @@ export class CardapioComponent implements OnInit {
   public categoriaSelected: string = '';
 
   public cardapio: ItemCardapio[] = []
+
+  public itensPedido: ItemPedido [] = []
+  public itemPedido!: ItemPedido;
 
   constructor(
     public modal: MatDialog,
@@ -54,6 +59,12 @@ export class CardapioComponent implements OnInit {
 
   openModalVisualizarPedidoMesa(){
     this.modal.open(ModalVisualizarPedidoMesa)
+  }
+
+  addItemPedido(itemCardapio: ItemCardapio) {
+    var itemPedidoId = String(Math.floor(Math.random() * (99 - 10) * 10) )
+    this.itemPedido = {id: itemPedidoId, qtd: 1, itensCardapio: itemCardapio}
+    this.itensPedido.push(this.itemPedido)
   }
 }
 
