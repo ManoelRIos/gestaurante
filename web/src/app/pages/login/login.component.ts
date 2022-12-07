@@ -13,3 +13,12 @@ export class LoginComponent implements OnInit {
   }
 
 }
+
+export class Usuarios
+{
+  constructor(
+    public id?: number,
+    public nome?: string,
+    public senha?: string,
+    public pefil?: string) {}
+}

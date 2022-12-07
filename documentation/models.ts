@@ -66,3 +66,9 @@ class Funcionario {
   cargo;
   /* END VARIABLES */ 
 }
+
+class Login{
+  id: number;
+  nome: string;
+  senha: string;
+}
