@@ -4,11 +4,12 @@
 
     <div class="itens-pedido">
       <ul class="list-group list-group-flush">
-        <li class="list-group-item" >
-          <p>X-Salada</p> 
+        <li class="list-group-item" *ngFor="let item of data.itensPedido"  >
+          <p>{{item.itensCardapio.nome}}</p> 
+          <p>R${{item.itensCardapio.preco * item.qtd}}</p>
           <div class="btn-group" role="group" aria-label="Basic example">
             <button type="button" class="btn btn-outline-danger">+</button>
-            <button type="button" class="btn qtd">3</button>
+            <button type="button" class="btn qtd">{{item.qtd}}</button>
             <button type="button" class="btn btn-outline-danger">-</button>
           </div>
         </li>
@@ -16,8 +17,6 @@
     </div>
 
     <form action="">
-
-      
       <div class="input-group">
         <label for="observacao">Observação:</label>
         <input type="text" placeholder="Ex: Sem salada"/>

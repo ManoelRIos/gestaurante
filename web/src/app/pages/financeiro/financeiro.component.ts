@@ -24,12 +24,17 @@ export class FinanceiroComponent implements OnInit {
   markers!: ApexMarkers;
   colors!: string[];
 
+  dia = new Date().getDate();
+  mes = new Date().getMonth();
+  ano = new Date().getFullYear();
   vendas = [
-    {x: 'jan', y: 3000},
-    {x: 'fev', y: 1500},
-    {x: 'mar', y: 1000},
-    {x: 'abr', y: 1000},
-    {x: 'mai', y: 2000},
+    {x: String(`${this.dia -6}/${this.mes}/${this.ano}`) , y: 1500},
+    {x: String(`${this.dia -5}/${this.mes}/${this.ano}`) , y: 1300},
+    {x: String(`${this.dia -4}/${this.mes}/${this.ano}`) , y: 2000},
+    {x: String(`${this.dia -3}/${this.mes}/${this.ano}`) , y: 1000},
+    {x: String(`${this.dia -2}/${this.mes}/${this.ano}`) , y: 1000},
+    {x: String(`${this.dia -1}/${this.mes}/${this.ano}`), y: 1500},
+    {x: String(`${this.dia}/${this.mes}/${this.ano}`), y: 3000},
   ]
   
   totalVendas: number = 0;
@@ -93,9 +98,7 @@ export class FinanceiroComponent implements OnInit {
 
       }
 
-      this.xaxis = {
-        categories: ["Jan", "Fev",  "Mar",  "Abr",  "Mai",  "Jun",  "Jul",  "Ago", "Set", "Nov", "Dez"]
-      }
+     
 
       this.markers = {
         size: 5,

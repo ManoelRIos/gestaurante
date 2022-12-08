@@ -20,14 +20,6 @@
       Visualizar pedido
     </button>
 
-    <button
-      (click)="(mostrarCardapio)"
-      *ngIf="mostrarCardapio"
-      mat-stroked-button
-      color="warn"
-    >
-      Voltar
-    </button>
   </div>
 </div>
 
@@ -52,14 +44,5 @@
       </div>
     </div>
 
-    <div class="cart">
-      <h2>Pedido</h2>
-      <div class="card-item" *ngFor="let itemPedido of itensPedido">
-        <!-- <img src="{{ itemPedido.itensCardapio.imagem }}" alt="" /> -->
-        <p>{{ itemPedido.itensCardapio.nome }}</p>
-        <p>qtd: {{ itemPedido.qtd }}</p>
-        <p>R$ {{ itemPedido.itensCardapio.preco }}</p>
-      </div>
-    </div>
   </div>
 </div>

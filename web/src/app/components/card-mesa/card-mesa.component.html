@@ -2,8 +2,8 @@
   <div class="card-mesa" [ngStyle]="currentStyle">  
     <p class="title">Mesa: <span>{{numeroMesa}}</span></p>
     <div class="attr">
-      <p><mat-icon>event_seat</mat-icon> <span>0/{{assentos}}</span></p>
-      <p><mat-icon>file_copy</mat-icon> <span>Pedidos: {{assentos}}</span></p>
+      <p><mat-icon>event_seat</mat-icon> <span>{{mesa.conta?.assentosOcupados || 0}}/{{assentos}}</span></p>
+      <p><mat-icon>file_copy</mat-icon> <span>Pedidos: {{mesa.conta?.pedidos?.length || 0}}</span></p>
       <p><mat-icon>access_time</mat-icon> <span>{{setTime(this.horaAbertura)}}</span></p>
     </div>    
   </div>

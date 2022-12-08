@@ -1,5 +1,5 @@
 <div class="header">
-  <app-title *ngIf="!isEdit && !isCreate" title="Usuários"></app-title>
+  <app-title *ngIf="!isEdit && !isCreate" title="Funcionarios"></app-title>
   <app-title *ngIf="isCreate" title="Cadastrar usuário"></app-title>
   <app-title *ngIf="isEdit" title="Editar usuário"></app-title>
 
@@ -15,27 +15,6 @@
 <!-- Consultar Funcionarios -->
 <div *ngIf="!isCreate && !isEdit" class="consultar-funcionarios">
   <app-table></app-table>
-
-  <table class="table-user">
-    <tr>
-      <th>ID</th>
-      <th>Usuário</th>
-      <th>Nome</th>
-      <th>Email</th>
-      <th>Status</th>
-      <th>Grupo</th>
-    </tr>
-
-    <tr *ngFor="let user of users" >
-      <td>{{user.id}}</td>
-      <td>{{user.nome}}</td>
-      <td>{{user.email}}</td>
-      <td>{{user.grupo}}</td>
-      <td>Ativo</td>
-      <td>Gerente</td>
-    </tr>
-  </table>
-
 </div>
 
 <div *ngIf="isCreate" class="create-funcionarios">

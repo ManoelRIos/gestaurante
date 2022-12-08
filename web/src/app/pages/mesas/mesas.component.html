@@ -13,7 +13,7 @@
       (click)="selectMesa(mesa)"
       [numeroMesa]="mesa.numeroMesa"
       [assentos]="mesa.assentos"
-      [status]="mesa.status"
+      [mesa]="mesa"
     >
     </app-card-mesa>
   </div>
@@ -26,16 +26,15 @@
       <app-title title="Mesa #{{ mesaSelected.numeroMesa }}"></app-title>
       <div class="btn-group">
         <button
-          *ngIf="!mesaSelected.status"
-          (click)="mesaSelected.status = true"
+          *ngIf="!mesaSelected.conta"
+          (click)="abrirConta(mesaSelected)"
           mat-flat-button
           color="warn"
         >
           Abrir conta
         </button>
         <button
-          *ngIf="mesaSelected.status"
-          (click)="mesaSelected.status = false"
+          *ngIf="mesaSelected.conta"
           (click)="openModalFecharConta()"
           mat-flat-button
           color="warn"
@@ -78,10 +77,10 @@
     <app-card-pedidos></app-card-pedidos>
   </div>
 
-  <app-cardapio 
-    [mostrarCardapio]="mostrarCardapio"
-    *ngIf="mostrarCardapio"
-    >
-  </app-cardapio>
-  
+  <div *ngIf="mostrarCardapio" class="mostrar-cardapio">
+    <button (click)="mostrarCardapio = false" mat-stroked-button color="warn">
+      Voltar
+    </button>
+    <app-cardapio [mostrarCardapio]="mostrarCardapio" [mesa]="mesaSelected"> </app-cardapio>
+  </div>
 </div>

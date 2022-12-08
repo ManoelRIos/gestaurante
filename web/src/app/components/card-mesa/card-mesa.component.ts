@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Mesa } from 'src/app/models/Mesa';
 
 @Component({
   selector: 'app-card-mesa',
@@ -10,7 +11,7 @@ export class CardMesaComponent implements OnInit {
 
   @Input() numeroMesa!: number;
   @Input() assentos!: number;
-  @Input() status!: boolean;
+  @Input() mesa!: Mesa;
   
   public isSelected: boolean = false;
   
@@ -20,16 +21,22 @@ export class CardMesaComponent implements OnInit {
 
   setCurrentStyle(){
     this.currentStyle = {
-      'background-color': this.status ?
+      'background-color': this.mesa.conta ?
        '#CF171D' : '#FFD152'
     }
   }
 
   setTime(time: Date){
     var horaAtual;
-    horaAtual = time.getHours().toString().padStart(2, '0') + ':'
-     + time.getMinutes().toString().padStart(2, '0');
-    return horaAtual;
+    if(this.mesa.conta){
+      var hour = this.mesa.conta.horaAbertura.getHours()
+      var minutes = this.mesa.conta.horaAbertura.getMinutes()
+      horaAtual = `${hour}:${minutes}`
+      return horaAtual;
+    } 
+    return "00:00"
+   /*  horaAtual = time.getHours().toString().padStart(2, '0') + ':'
+     + time.getMinutes().toString().padStart(2, '0'); */
   }
 
   constructor() { }

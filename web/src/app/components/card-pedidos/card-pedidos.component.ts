@@ -18,19 +18,19 @@ export class CardPedidosComponent implements OnInit {
   pedidosConcluido: Pedido[] = [];
 
   constructor(public modal: MatDialog) { 
-    
+
   }
 
-  ngOnInit() {    
+  ngOnInit() {
     this.definePedidos()
   }
 
-  onAtualizaStatusPedido(idPedido: string) {   
-    console.log("ok")       
+  onAtualizaStatusPedido(idPedido: string) {
+    console.log("ok")
     var pedido = this.pedidos.find(({id}) => id === idPedido)
     if(pedido){
-      pedido.status += 1    
-    }     
+      pedido.status += 1
+    }
     this.definePedidos()
   }
 
@@ -45,13 +45,13 @@ export class CardPedidosComponent implements OnInit {
     this.pedidosConcluido = this.pedidos.filter(({status}) => status === 2);
   }
 
-  openModalCancelarPedido(pedido: Pedido){    
+  openModalCancelarPedido(pedido: Pedido){
     console.log(pedido) 
     const modalRef = this.modal.open(ModalCancelarPedido, {
-      data: pedido  
+      data: pedido
     })
 
-    modalRef.afterClosed().subscribe(result => {     
+    modalRef.afterClosed().subscribe(result => {
     });
   }
 

@@ -2,7 +2,8 @@
 //Detem, Possui, apropria
 
 class Venda {
-
+  x: Date;
+  y: number;
 }
 
 class Mesa {
@@ -27,7 +28,7 @@ class Conta {
 class Pedido {
   id :number
   tempoDecorrido : string
-  itensPedido : ItemPedido
+  itensPedido : ItemPedido[]
   observacao : string
   status : number
   // 1 Pedido POSSI2 N ItensPedido
