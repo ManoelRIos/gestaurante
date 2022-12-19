@@ -26,8 +26,8 @@ export class CardapioComponent implements OnInit {
   public title = 'Cardápio';
 
   pratoSelected!: string;
-  public filterCardapio: boolean = false;
-  public categoriaSelected: string = '';
+
+  public categorias: string[] = []
 
   public cardapio: ItemCardapio[] = [];
 
@@ -47,6 +47,11 @@ export class CardapioComponent implements OnInit {
   carregarItensCardapio() {
     this.itemCardapioService.getAll().subscribe((cardapio: ItemCardapio[]) => {
       this.cardapio = cardapio;
+      this.cardapio.map(item => {
+        if(!this.categorias.find(element => element == item.categoria)){
+          this.categorias.push(item.categoria)
+        }
+      })
     }),
       (error: any) => {
         console.error(error);
@@ -63,8 +68,17 @@ export class CardapioComponent implements OnInit {
 
   openModalVisualizarPedidoMesa() {
     this.modal.open(ModalVisualizarPedidoMesa, {
-      data: this.pedido,
+      data: {pedido: this.pedido, mesa: this.mesa},
     });
+  }
+
+  filtrarPorCategoria(categoria: string) {
+    this.itemCardapioService.getByCat(categoria).subscribe((cardapio: ItemCardapio[]) => {
+      this.cardapio = cardapio;
+    }),
+      (error: any) => {
+        console.error(error);
+      };
   }
 
   addItemPedido(itemCardapio: ItemCardapio) {
@@ -77,11 +91,12 @@ export class CardapioComponent implements OnInit {
       itensPedido: this.itensPedido,
       numeroMesa: this.mesa.numeroMesa,
       status: 0,
-      observacao: 'Teste',
-      tempoDecorrido: '15 min',
+      observacao: '1 x - salada sem salada',
+      tempoDecorrido: '15',
     };
     this.mesa.conta?.pedidos?.push(this.pedido);
-    console.log(this.pedido);
+
+
   }
 }
 

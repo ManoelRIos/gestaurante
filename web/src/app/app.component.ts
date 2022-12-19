@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LoginService } from './services/Login.service';
 
 @Component({
   selector: 'app-root',
@@ -9,6 +10,10 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
 
-  isLogged = !false;
+
+  constructor(public loginService: LoginService){}
+
+  a = true;
   title = 'Gestaurante';
+
 }

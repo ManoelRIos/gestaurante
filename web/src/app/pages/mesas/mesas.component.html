@@ -11,8 +11,6 @@
     <app-card-mesa
       *ngFor="let mesa of mesas"
       (click)="selectMesa(mesa)"
-      [numeroMesa]="mesa.numeroMesa"
-      [assentos]="mesa.assentos"
       [mesa]="mesa"
     >
     </app-card-mesa>
@@ -27,7 +25,7 @@
       <div class="btn-group">
         <button
           *ngIf="!mesaSelected.conta"
-          (click)="abrirConta(mesaSelected)"
+          (click)="abrirConta()"
           mat-flat-button
           color="warn"
         >
@@ -49,10 +47,10 @@
 
     <div class="card-info-mesa">
       <div class="info-mesa">
-        <p>Pedidos: {{ mesaSelected.assentos }}</p>
+        <p>Pedidos: {{ 0 && mesaSelected.conta?.pedidos.length }}</p>
         <!-- Informação da conta -->
         <p>
-          Pessoas: <input type="number" value="{{ mesaSelected.assentos }}" />
+          Pessoas: <input type="number" value="{{ mesaSelected.conta?.assentosOcupados || 0}}" />
         </p>
         <p>
           Status: <span> {{ mesaSelected.status ? "Aberta" : "Fechada" }}</span>
@@ -74,7 +72,7 @@
       </button>
     </div>
 
-    <app-card-pedidos></app-card-pedidos>
+    <app-card-pedidos [pedidos]="mesaSelected.conta.pedidos"></app-card-pedidos>
   </div>
 
   <div *ngIf="mostrarCardapio" class="mostrar-cardapio">

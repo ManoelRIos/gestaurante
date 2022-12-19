@@ -9,8 +9,6 @@ import { Mesa } from 'src/app/models/Mesa';
 
 export class CardMesaComponent implements OnInit {
 
-  @Input() numeroMesa!: number;
-  @Input() assentos!: number;
   @Input() mesa!: Mesa;
   
   public isSelected: boolean = false;
@@ -22,7 +20,7 @@ export class CardMesaComponent implements OnInit {
   setCurrentStyle(){
     this.currentStyle = {
       'background-color': this.mesa.conta ?
-       '#CF171D' : '#FFD152'
+       '#CF171D' : '#FFA81E'
     }
   }
 

@@ -45,8 +45,5 @@ const funcionarios: Funcionario[] =[
   { id: 4, userName: "Renan", name: "Renan Pedroso", email: "renan@gmail.com", status: false, grupo: "Garçom" },
   { id: 4, userName: "Renan", name: "Renan Pedroso", email: "renan@gmail.com", status: false, grupo: "Garçom" },
   { id: 4, userName: "Renan", name: "Renan Pedroso", email: "renan@gmail.com", status: false, grupo: "Garçom" },
-
-
-  
 ];
 

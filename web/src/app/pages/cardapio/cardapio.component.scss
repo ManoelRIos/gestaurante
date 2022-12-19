@@ -44,44 +44,13 @@
 }
 
 .content-item-cardapio{
-  display: flex;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   flex-wrap: wrap;
   gap: 2rem;
-  row-gap: 8rem;
+  row-gap: 5rem;
 }
-
 
 .cardapio {
   padding-top: 2rem;
 }
-
-.cardapio .cart {
-  width: 100%;
-  background-color: #fff;
-  border-radius: .9rem;
-  padding: 2rem;
-}
-
-.cardapio .cart h2 {
-  font-size: 2.4rem;
-  text-align: center;
-  padding-bottom: 2rem;
-}
-
-.cardapio .cart .card-item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 2rem;
-  background-color: #FDF5EA;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  border-radius: .9rem;
-  text-align: center;
-}
-
-.cardapio .cart .card-item img {
-  width: 5rem;
-}
-

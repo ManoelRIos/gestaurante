@@ -7,8 +7,7 @@ import { Pedido } from 'src/app/models/Pedido';
   styleUrls: ['./pedidos.component.scss']
 })
 export class PedidosComponent implements OnInit {
-
-
+  
   public title = 'Pedidos';
 
   public pedidos: Pedido[] = [

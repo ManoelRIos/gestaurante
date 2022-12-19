@@ -16,4 +16,8 @@ export class ItemCardapioService {
   getAll(): Observable<ItemCardapio[]>  {
     return this.http.get<ItemCardapio[]>(`${this.baseUrl}`);
   }
+
+  getByCat(cat: string) : Observable<ItemCardapio[]> {
+    return this.http.get<ItemCardapio[]>(`${this.baseUrl}/${cat}`);
+  }
 }

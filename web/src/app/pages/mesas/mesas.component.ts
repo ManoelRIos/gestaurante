@@ -1,6 +1,6 @@
+import { MesaService } from './../../services/Mesa.service';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
-import { Conta } from 'src/app/models/Conta';
 import { Mesa } from 'src/app/models/Mesa';
 
 @Component({
@@ -9,24 +9,20 @@ import { Mesa } from 'src/app/models/Mesa';
   styleUrls: ['./mesas.component.scss'],
 })
 export class MesasComponent implements OnInit {
-  public mesas: Mesa[] = [
-    { id: '1', numeroMesa: 1, assentos: 4, status: false },
-    { id: '2', numeroMesa: 2, assentos: 6, status: true },
-    { id: '3', numeroMesa: 3, assentos: 2, status: true },
-    { id: '4', numeroMesa: 4, assentos: 4, status: false },
-  ];
+  public mesas: Mesa[] = [];
 
-  public contas: Conta[] = [];
-  public conta!: Conta;
 
   public mostrarCardapio = false;
   public mesaSelected: any;
   public modalIsOpen = false;
   public title = 'Mesas';
 
-  constructor(public modal: MatDialog) {}
+  constructor(public modal: MatDialog, private mesaService: MesaService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.mesas = this.mesaService.mesas;
+    console.log(this.mesas)
+  }
 
   openModalCadastrarMesa() {
     this.modal.open(ModalCadastrarMesa);
@@ -40,22 +36,12 @@ export class MesasComponent implements OnInit {
     this.mesaSelected = mesa;
   }
 
-  abrirConta(mesa: Mesa) {
+  abrirConta() {
+    this.mostrarCardapio = true;
+  }
 
-    var contaId = Math.floor(Math.random() * (99 - 10) * 10) 
-    this.conta = {
-      id: contaId,
-      assentosOcupados: 2,
-      horaAbertura: new Date(),
-      horaDoFechamento: new Date(),
-      mesa: mesa.numeroMesa,
-      status: true
-    };
-    this.contas.push(this.conta)
-    console.log(this.conta)
-    console.log(this.contas)
-    this.mesaSelected.conta = this.conta;
-    console.log(this.mesaSelected.conta.pedidos)
+  pegaMesa(numMesa: number) {
+    this.mesaSelected = this.mesaService.mesas.find(mesa => mesa.numeroMesa === numMesa)
   }
 }
 

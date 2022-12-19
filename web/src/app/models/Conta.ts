@@ -8,5 +8,5 @@ export class Conta {
   horaDoFechamento: Date = new Date();
   status!: boolean
   mesa!: number;
-  pedidos?: Pedido[];
+  pedidos!: Pedido[];
 }

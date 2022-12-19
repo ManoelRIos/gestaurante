@@ -4,7 +4,7 @@
 
     <div class="itens-pedido">
       <ul class="list-group list-group-flush">
-        <li class="list-group-item" *ngFor="let item of data.itensPedido"  >
+        <li class="list-group-item" *ngFor="let item of data.pedido.itensPedido"  >
           <p>{{item.itensCardapio.nome}}</p> 
           <p>R${{item.itensCardapio.preco * item.qtd}}</p>
           <div class="btn-group" role="group" aria-label="Basic example">
@@ -23,7 +23,7 @@
       </div>
 
       <div class="btn-group">
-        <button class="btn-default">Fazer pedido</button>
+        <button class="btn-default" (click)="fazerPedido()" >Fazer pedido</button>
         <button class="btn-warn" (click)="onNoClick()">Voltar</button>
       </div>
     </form>

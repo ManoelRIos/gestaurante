@@ -1,24 +1,35 @@
-import { Component, OnInit } from '@angular/core';
+import { LoginService } from './../../services/Login.service';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { MatTableDataSource } from '@angular/material/table';
 import { User } from 'src/app/models/User';
+import { MatPaginator } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-funcionarios',
   templateUrl: './funcionarios.component.html',
   styleUrls: ['./funcionarios.component.scss']
 })
-export class FuncionariosComponent implements OnInit {
+export class FuncionariosComponent implements AfterViewInit  {
+
+  
+  displayedColumns: string[] = ['id', 'nome', 'email', 'grupo'];
+  dataSource = new MatTableDataSource<User>(this.loginService.users);
 
   isEdit = false;
   isCreate = false;
 
-  public users: User[] = [
-    {id: '1', nome: 'Manoel Rios', email: 'manoel@gmail.com', grupo: 'Gerente', senha: '123456'}
-  ]
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-  constructor() { }
+  constructor(public loginService: LoginService) { }
 
-  ngOnInit() {
+  ngAfterViewInit(): void {
+    this.dataSource.paginator = this.paginator;
+   
   }
 
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
 
 }

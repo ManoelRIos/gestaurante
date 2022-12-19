@@ -25,8 +25,11 @@
 
 <div class="container">
   <div class="category">
-    <button *ngFor="let itemCardapio of cardapio" class="card-cat">
-      {{ itemCardapio.categoria }}
+    <button *ngFor="let categoria of categorias" (click)="filtrarPorCategoria(categoria)"  class="card-cat">
+      {{ categoria }}
+    </button>
+    <button (click)="carregarItensCardapio()"  class="card-cat">
+      Todos
     </button>
   </div>
 

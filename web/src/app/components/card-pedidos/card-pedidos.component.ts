@@ -1,3 +1,4 @@
+import { MesaService } from './../../services/Mesa.service';
 import { ItemPedido } from 'src/app/models/ItemPedido';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Pedido } from 'src/app/models/Pedido';
@@ -11,13 +12,14 @@ import { ModalCancelarPedido } from './modal-cancelar-pedido/modal-cancelar-pedi
 })
 export class CardPedidosComponent implements OnInit {
 
-  @Input() pedidos: Pedido[] = [];
+
+  @Input() pedidos!: Pedido[];
 
   pedidosPendente: Pedido[]= [];
   pedidosEmPreparo: Pedido[] = [];
   pedidosConcluido: Pedido[] = [];
 
-  constructor(public modal: MatDialog) { 
+  constructor(public modal: MatDialog, public mesaService: MesaService) { 
 
   }
 
